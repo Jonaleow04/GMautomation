@@ -107,3 +107,7 @@ def pj_class():
 ```bash
 python gmautomation.py
 ```
+
+## References
+- https://selenium-python.readthedocs.io
+- https://schedule.readthedocs.io/en/stable/
