@@ -23,6 +23,10 @@ python -m pip install time
 - Open up the Login Credential.txt file
 - Replace the first line with your Gmail used for logging into the Google Meet
 - Then replace the second line with your Gmail's password
+```python
+yourname@gmail.com
+youpassword
+```
 - Now open up gmautomation.py
 - From line 11 to 20, is the variable used to store the Google Meet's code, you may need to rename the variable it according to your references and replace the code
 ```python
