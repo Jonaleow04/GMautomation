@@ -103,4 +103,4 @@ def pj_class():
 ```
 - You may run the program itself on an idle, or else you may run the program according to the following steps
 - Open up command prompt and direct it to the Python program's path
-- Type '<python gmautomation.py>'
+- Type '<python gmautomation.py>' and press enter
