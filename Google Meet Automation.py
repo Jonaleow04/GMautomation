@@ -8,16 +8,16 @@ from selenium.webdriver.common.by import By
 import time, schedule
 
 #gm code
-bm_code = 'julbmt5'
-eng_code = 'par2bit5'
-cn_code = 'hcsbct5'
-phy_code = 'asrifzt5'
-bio_code = 'shalbgt5'
-sej_code = 'ruzsjt5a'
-pm_code = 'mogpmt5'
-mm_code = 'talmmt5'
-am_code = 'cxq-uern-zrd'
-pj_code = 'mzampjkt5'
+bm_code = '#code' 
+eng_code = '#code'
+cn_code = '#code'
+phy_code = '#code'
+bio_code = '#code'
+sej_code = '#code'
+pm_code = '#code'
+mm_code = '#code'
+am_code = '#code'
+pj_code = '#code'
 
 #login credential
 with open('Login Credential.txt', 'r') as file:
