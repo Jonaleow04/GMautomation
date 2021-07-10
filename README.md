@@ -12,7 +12,7 @@
 2. Install the following Python modules: selenium, schedule, time
 ```bash
 python -m pip install selenium
-python -m pip install selenium
+python -m pip install schedule
 python -m pip install time
 ```
 3. Install [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
