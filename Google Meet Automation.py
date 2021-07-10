@@ -143,6 +143,7 @@ driver = webdriver.Chrome(options=opt, executable_path=r'C:\Users\jonat\Download
 gLogin()
 
 #loop that will keep the program running and execute the specific function according to the given time
+#time is offset by a few minute to avoid clashing
 if __name__ == "__main__":
     #monday class
     schedule.every().monday.at('07:30').do(bio_class)
