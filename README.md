@@ -39,7 +39,7 @@ python -m pip install time
 }
 ```
 - Now open up gmautomation.py
-- From line 102 to 128, you will need to change the schedule login argument with your own
+- From line 102 to 128, you will need to change the schedule and login argument with your own
 ```python
 #monday class
 schedule.every().monday.at('07:30').do(login, data['bio_code'])
