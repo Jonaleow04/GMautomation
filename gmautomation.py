@@ -92,7 +92,7 @@ opt.add_experimental_option("prefs", { \
 })
 
 #acess chromedriver (crhome for automation)
-driver = webdriver.Chrome(options=opt, executable_path=r'C:\Users\jonat\Downloads\chromedriver_win32 (1)\chromedriver.exe')
+driver = webdriver.Chrome(options=opt, executable_path=r'#your chromedriver.exe path')
 
 #to login google account first
 gLogin()
