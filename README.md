@@ -7,6 +7,7 @@
 
 > WARNING: Note that this program must be used according to one's resonsibility. In no way do I or any contributors of this project encourage students to use this as a way to not sit in front of the desk during class. This project was made with the pure intention of personal
 
+
 ## Setup
 1. Install [Python](https://www.python.org/downloads/) 3.4 or above
 2. Install the following Python modules: selenium, schedule, time
@@ -17,6 +18,7 @@ python -m pip install time
 
 ```
 3. Install [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+
 
 ## Usage
 - Clone the repository first
@@ -53,9 +55,11 @@ schedule.every().monday.at('12:30').do(login, data['phy_code'])
 python gmautomation.py
 ```
 
+
 ## References
 - https://selenium-python.readthedocs.io
 - https://schedule.readthedocs.io/en/stable/
+
 
 ## Improvements
 ### Update 1:
