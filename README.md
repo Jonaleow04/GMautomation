@@ -39,14 +39,14 @@ python -m pip install time
 }
 ```
 - Now open up gmautomation.py
-- From line 102 to 128, you will need to change the schedule login argument according to your own 
+- From line 102 to 128, you will need to change the schedule login argument with your own
 ```python
 #monday class
 schedule.every().monday.at('07:30').do(login, data['bio_code'])
 schedule.every().monday.at('09:02').do(login, data['bm_code'])
 schedule.every().monday.at('12:30').do(login, data['phy_code'])
 ```
-- You may run the program itself on an idle, or else you may run the program according to the following steps
+- You may run the program itself on an IDE, or else you may run the program according to the following steps
 - Open up command prompt and direct it to the Python program's path
 - Type the following and press enter
 ```bash
