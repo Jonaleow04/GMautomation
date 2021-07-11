@@ -69,4 +69,4 @@ python gmautomation.py
 - Migrated data to config.json file as suggested by u/mikerahk on reddit
 
 ### Update 2:
--Reduced the syntax noises by imlpementing the mapping concept for the scheduling section as suggested by u/ElevenPhonons on reddit
+- Reduced the syntax noises by implementing the mapping concept for the scheduling section as suggested by u/ElevenPhonons on reddit
