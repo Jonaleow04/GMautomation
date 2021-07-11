@@ -88,37 +88,6 @@ def login(gm_code):
     join_button = WebDriverWait(driver, 36).until(EC.presence_of_element_located((By.XPATH, "//span[contains(text(),'Join now')]")))
     driver.execute_script("arguments[0].click();", join_button)
     print('Done')
-
-#create functions for each class with class code as schedule module .do(func()) does not taking in argument
-def bm_class():
-    login(bm_code)
-
-def eng_class():
-    login(eng_code)
-
-def cn_class():
-    login(cn_code)
-
-def phy_class():
-    login(phy_code)
-
-def bio_class():
-    login(bio_code)
-
-def sej_class():
-    login(sej_code)
-
-def pm_class():
-    login(pm_code)
-
-def mm_class():
-    login(mm_code)
-
-def am_class():
-    login(am_code)
-
-def pj_class():
-    login(pj_code)
   
 # create chrome instamce
 # Code to allow access for Microphone, Camera and notifications
@@ -146,33 +115,33 @@ gLogin()
 #time is offset by a few minute to avoid clashing
 if __name__ == "__main__":
     #monday class
-    schedule.every().monday.at('07:30').do(bio_class)
-    schedule.every().monday.at('09:02').do(bm_class)
-    schedule.every().monday.at('12:30').do(phy_class)
+    schedule.every().monday.at('07:30').do(login, bio_code)
+    schedule.every().monday.at('09:02').do(login, bm_code)
+    schedule.every().monday.at('12:30').do(login, phy_code)
 
     #tuesday class
-    schedule.every().tuesday.at('08:00').do(pj_class)
-    schedule.every().tuesday.at('10:30').do(am_class)
-    schedule.every().tuesday.at('11:32').do(mm_class)
+    schedule.every().tuesday.at('08:00').do(login, pj_code)
+    schedule.every().tuesday.at('10:30').do(login, am_code)
+    schedule.every().tuesday.at('11:32').do(login, mm_code)
 
     #wednesday class
-    schedule.every().wednesday.at('07:30').do(pm_class)
-    schedule.every().wednesday.at('08:32').do(bm_class)
-    schedule.every().wednesday.at('11:30').do(phy_class)
-    schedule.every().wednesday.at('12:32').do(eng_class)
+    schedule.every().wednesday.at('07:30').do(login, pm_code)
+    schedule.every().wednesday.at('08:32').do(login, bm_code)
+    schedule.every().wednesday.at('11:30').do(login, phy_code)
+    schedule.every().wednesday.at('12:32').do(login, eng_code)
 
     #thursday class 
-    schedule.every().thursday.at('07:30').do(bio_class)
-    schedule.every().thursday.at('09:02').do(am_class)
-    schedule.every().thursday.at('10:30').do(cn_class)
-    schedule.every().thursday.at('11:32').do(pm_class)
+    schedule.every().thursday.at('07:30').do(login, bio_code)
+    schedule.every().thursday.at('09:02').do(login, am_code)
+    schedule.every().thursday.at('10:30').do(login, cn_code)
+    schedule.every().thursday.at('11:32').do(login, pm_code)
 
 
     #friday class
-    schedule.every().friday.at('07:30').do(sej_class)
-    schedule.every().friday.at('08:32').do(eng_class)
-    schedule.every().friday.at('10:30').do(mm_class)
-    schedule.every().friday.at('11:32').do(cn_class)
+    schedule.every().friday.at('07:30').do(login, sej_code)
+    schedule.every().friday.at('08:32').do(login, eng_code)
+    schedule.every().friday.at('10:30').do(login, mm_code)
+    schedule.every().friday.at('11:32').do(login, cn_code)
 
     #run the program in the background
     while True:
