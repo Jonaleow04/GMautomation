@@ -20,35 +20,25 @@ python -m pip install time
 
 ## Usage
 - Clone the repository first
-- Open up the Login Credential.txt file
-- Replace the first line with your Gmail used for logging into the Google Meet
-- Then replace the second line with your Gmail's password
-```python
-yourname@gmail.com
-yourpassword
+- Open up the config.json file
+- Replace the data with your own
+```json
+{
+    "email": " ",
+    "password": " ",
+    "bm_code": " ",
+    "eng_code": " ",
+    "cn_code": " ",
+    "phy_code": " ",
+    "bio_code": " ",
+    "sej_code": " ",
+    "pm_code": " ",
+    "mm_code": " ",
+    "am_code": " ",
+    "pj_code": " "
+}
 ```
 - Now open up gmautomation.py
-- From line 11 to 20, is the variable used to store the Google Meet's code, you may need to rename the variable it according to your references and replace the code
-```python
-#gm code
-bm_code = '#code' 
-eng_code = '#code'
-cn_code = '#code'
-phy_code = '#code'
-bio_code = '#code'
-sej_code = '#code'
-pm_code = '#code'
-mm_code = '#code'
-am_code = '#code'
-pj_code = '#code'
-```
-- From line 117 to 144, is the scheduling of Google Meets, you will need to replace it with the time your meeting starts
-```python
-    #monday class
-    schedule.every().monday.at('07:30').do(login, bio_code)
-    schedule.every().monday.at('09:02').do(login, bm_code)
-    schedule.every().monday.at('12:30').do(login, phy_code)
-```
 - You may run the program itself on an idle, or else you may run the program according to the following steps
 - Open up command prompt and direct it to the Python program's path
 - Type the following and press enter
@@ -63,3 +53,4 @@ python gmautomation.py
 ## Improvements
 ### Update 1:
 - Got rid of separate function for each class and improved the scheduling code as suggested by u/17291 on reddit
+- Migrated data to config.json file as suggested by u/mikerahk on reddit
