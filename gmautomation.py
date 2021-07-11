@@ -104,7 +104,7 @@ if __name__ == "__main__":
     [('08:00', 'pj_code'), ('10:30', 'am_code'), ('11:30', 'mm_code')], 
     [('07:30', 'pm_code'), ('08:30', 'bm_code'), ('11:30', 'phy_code'), ('12:30', 'eng_code')], 
     [('07:30', 'bio_code'), ('09:00', 'am_code'), ('10:30', 'cn_code'), ('11:30', 'pm_code')] ,
-    [('23:03', 'sej_code'), ('23:05', 'eng_code'), ('10:30', 'mm_code'), ('11:30', 'pm_code')]]
+    [('07:30', 'sej_code'), ('08:30', 'eng_code'), ('10:30', 'mm_code'), ('11:30', 'pm_code')]]
     
     #mapping respective class time and code into the schedule argument by iterating through the config list
     for schedules in config:
