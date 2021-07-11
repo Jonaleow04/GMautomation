@@ -42,68 +42,12 @@ mm_code = '#code'
 am_code = '#code'
 pj_code = '#code'
 ```
-- From line 93 to 121, is the function for each respective classes, the function inside of it contains the code variable of line 11 to 20 as argument.
-```python
-def bm_class():
-    login(bm_code)
-
-def eng_class():
-    login(eng_code)
-
-def cn_class():
-    login(cn_code)
-
-def phy_class():
-    login(phy_code)
-
-def bio_class():
-    login(bio_code)
-
-def sej_class():
-    login(sej_code)
-
-def pm_class():
-    login(pm_code)
-
-def mm_class():
-    login(mm_code)
-
-def am_class():
-    login(am_code)
-
-def pj_class():
-    login(pj_code)
-```
-- From line 148 to 175, is the scheduling of Google Meets, you will need to repolace it with the time your meeting starts
+- From line 117 to 144, is the scheduling of Google Meets, you will need to repolace it with the time your meeting starts
 ```python
     #monday class
-    schedule.every().monday.at('07:30').do(bio_class)
-    schedule.every().monday.at('09:02').do(bm_class)
-    schedule.every().monday.at('12:30').do(phy_class)
-
-    #tuesday class
-    schedule.every().tuesday.at('08:00').do(pj_class)
-    schedule.every().tuesday.at('10:30').do(am_class)
-    schedule.every().tuesday.at('11:32').do(mm_class)
-
-    #wednesday class
-    schedule.every().wednesday.at('07:30').do(pm_class)
-    schedule.every().wednesday.at('08:32').do(bm_class)
-    schedule.every().wednesday.at('11:30').do(phy_class)
-    schedule.every().wednesday.at('12:32').do(eng_class)
-
-    #thursday class 
-    schedule.every().thursday.at('07:30').do(bio_class)
-    schedule.every().thursday.at('09:02').do(am_class)
-    schedule.every().thursday.at('10:30').do(cn_class)
-    schedule.every().thursday.at('11:32').do(pm_class)
-
-
-    #friday class
-    schedule.every().friday.at('07:30').do(sej_class)
-    schedule.every().friday.at('08:32').do(eng_class)
-    schedule.every().friday.at('10:30').do(mm_class)
-    schedule.every().friday.at('11:32').do(cn_class)
+    schedule.every().monday.at('07:30').do(login, bio_code)
+    schedule.every().monday.at('09:02').do(login, bm_code)
+    schedule.every().monday.at('12:30').do(login, phy_code)
 ```
 - You may run the program itself on an idle, or else you may run the program according to the following steps
 - Open up command prompt and direct it to the Python program's path
@@ -115,3 +59,7 @@ python gmautomation.py
 ## References
 - https://selenium-python.readthedocs.io
 - https://schedule.readthedocs.io/en/stable/
+
+### Improvements
+#### Update 1:
+- Got rid of separate function for each class and improved the scheduling code as suggested by u/17291 on reddit
