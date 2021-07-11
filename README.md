@@ -60,6 +60,6 @@ python gmautomation.py
 - https://selenium-python.readthedocs.io
 - https://schedule.readthedocs.io/en/stable/
 
-### Improvements
-#### Update 1:
+## Improvements
+### Update 1:
 - Got rid of separate function for each class and improved the scheduling code as suggested by u/17291 on reddit
