@@ -42,7 +42,7 @@ mm_code = '#code'
 am_code = '#code'
 pj_code = '#code'
 ```
-- From line 117 to 144, is the scheduling of Google Meets, you will need to repolace it with the time your meeting starts
+- From line 117 to 144, is the scheduling of Google Meets, you will need to replace it with the time your meeting starts
 ```python
     #monday class
     schedule.every().monday.at('07:30').do(login, bio_code)
