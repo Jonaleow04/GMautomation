@@ -5,42 +5,28 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-import time, schedule
+import time, schedule, json
 
-#gm code
-bm_code = '#code' 
-eng_code = '#code'
-cn_code = '#code'
-phy_code = '#code'
-bio_code = '#code'
-sej_code = '#code'
-pm_code = '#code'
-mm_code = '#code'
-am_code = '#code'
-pj_code = '#code'
-
-#login credential
-with open('Login Credential.txt', 'r') as file:
-    login_credential = file.read().splitlines()
-
-email = login_credential[0]
-password = login_credential[1]
+#login credential and gm code
+with open('config.json') as file:
+    data = json.load(file)
 
 #login google account automation
 def gLogin():
     # Login Page
     driver.get('https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/&ec=GAZAAQ')
     driver.refresh()
+
     # input Gmail
     print('Inputting Email...')
-    driver.find_element_by_id("identifierId").send_keys(email) #email
+    driver.find_element_by_id("identifierId").send_keys(data['email']) #email
     print('Done')
     driver.find_element_by_id("identifierNext").click()
     driver.implicitly_wait(10)
 
     # input Password
     print('Inputting Password...')
-    driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys(password) #password
+    driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys(data['password']) #password
     driver.implicitly_wait(10)
     print('Done')
     driver.find_element_by_id("passwordNext").click()
@@ -70,14 +56,14 @@ def login(gm_code):
     print('Done')
 
     #turn off mic by ctrl + d
-    time.sleep(10)
+    time.sleep(30) #wait for page to load correctly
     print('Turning off mic...')
     turn_off_mic_action = ActionChains(driver)
     turn_off_mic_action.key_down(Keys.CONTROL).send_keys("d").key_up(Keys.CONTROL).perform();
     print('Done')
 
     #turn off cam by ctrl + e
-    time.sleep(5)
+    time.sleep(10)
     print('Turning off camera...')
     turn_off_camera_action = ActionChains(driver)
     turn_off_camera_action.key_down(Keys.CONTROL).send_keys("e").key_up(Keys.CONTROL).perform();
@@ -112,39 +98,36 @@ driver = webdriver.Chrome(options=opt, executable_path=r'C:\Users\jonat\Download
 gLogin()
 
 #loop that will keep the program running and execute the specific function according to the given time
-#time is offset by a few minute to avoid clashing
 if __name__ == "__main__":
     #monday class
-    schedule.every().monday.at('07:30').do(login, bio_code)
-    schedule.every().monday.at('09:02').do(login, bm_code)
-    schedule.every().monday.at('12:30').do(login, phy_code)
+    schedule.every().monday.at('07:30').do(login, data['bio_code'])
+    schedule.every().monday.at('09:02').do(login, data['bm_code'])
+    schedule.every().monday.at('12:30').do(login, data['phy_code'])
 
     #tuesday class
-    schedule.every().tuesday.at('08:00').do(login, pj_code)
-    schedule.every().tuesday.at('10:30').do(login, am_code)
-    schedule.every().tuesday.at('11:32').do(login, mm_code)
+    schedule.every().tuesday.at('08:00').do(login, data['pj_code'])
+    schedule.every().tuesday.at('10:30').do(login, data['am_code'])
+    schedule.every().tuesday.at('11:32').do(login, data['mm_code'])
 
     #wednesday class
-    schedule.every().wednesday.at('07:30').do(login, pm_code)
-    schedule.every().wednesday.at('08:32').do(login, bm_code)
-    schedule.every().wednesday.at('11:30').do(login, phy_code)
-    schedule.every().wednesday.at('12:32').do(login, eng_code)
+    schedule.every().wednesday.at('07:30').do(login, data['pm_code'])
+    schedule.every().wednesday.at('08:32').do(login, data['bm_code'])
+    schedule.every().wednesday.at('11:30').do(login, data['phy_code'])
+    schedule.every().wednesday.at('12:32').do(login, data['eng_code'])
 
     #thursday class 
-    schedule.every().thursday.at('07:30').do(login, bio_code)
-    schedule.every().thursday.at('09:02').do(login, am_code)
-    schedule.every().thursday.at('10:30').do(login, cn_code)
-    schedule.every().thursday.at('11:32').do(login, pm_code)
-
+    schedule.every().thursday.at('07:30').do(login, data['bio_code'])
+    schedule.every().thursday.at('09:02').do(login, data['am_code'])
+    schedule.every().thursday.at('10:30').do(login, data['cn_code'])
+    schedule.every().thursday.at('11:32').do(login, data['pm_code'])
 
     #friday class
-    schedule.every().friday.at('07:30').do(login, sej_code)
-    schedule.every().friday.at('08:32').do(login, eng_code)
-    schedule.every().friday.at('10:30').do(login, mm_code)
-    schedule.every().friday.at('11:32').do(login, cn_code)
+    schedule.every().friday.at('07:30').do(login, data['sej_code'])
+    schedule.every().friday.at('08:32').do(login, data['eng_code'])
+    schedule.every().friday.at('10:30').do(login, data['mm_code'])
+    schedule.every().friday.at('11:32').do(login, data['cn_code'])
 
     #run the program in the background
     while True:
         schedule.run_pending() #check if need to run anything
         time.sleep(10) #10 second interval
-
