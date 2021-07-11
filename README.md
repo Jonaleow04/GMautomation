@@ -23,7 +23,7 @@ python -m pip install time
 ## Usage
 - Clone the repository first
 - Open up the config.json file
-- Replace the data with your own
+- Replace the data with your own data
 ```json
 {
     "email": " ",
@@ -41,12 +41,14 @@ python -m pip install time
 }
 ```
 - Now open up gmautomation.py
-- From line 102 to 128, you will need to change the schedule and login argument with your own
+- From line 103 to 107 (config variable), you will need to replace the data with your own data
 ```python
-#monday class
-schedule.every().monday.at('07:30').do(login, data['bio_code'])
-schedule.every().monday.at('09:02').do(login, data['bm_code'])
-schedule.every().monday.at('12:30').do(login, data['phy_code'])
+#scheduling
+config = [[('07:30', 'bio_code'), ('09:00', 'bm_code'), ('12:30', 'phy_code')], 
+[('08:00', 'pj_code'), ('10:30', 'am_code'), ('11:30', 'mm_code')], 
+[('07:30', 'pm_code'), ('08:30', 'bm_code'), ('11:30', 'phy_code'), ('12:30', 'eng_code')], 
+[('07:30', 'bio_code'), ('09:00', 'am_code'), ('10:30', 'cn_code'), ('11:30', 'pm_code')] ,
+[('23:03', 'sej_code'), ('23:05', 'eng_code'), ('10:30', 'mm_code'), ('11:30', 'pm_code')]]
 ```
 - You may run the program itself on an IDE, or else you may run the program according to the following steps
 - Open up command prompt and direct it to the Python program's path
@@ -65,3 +67,6 @@ python gmautomation.py
 ### Update 1:
 - Got rid of separate function for each class and improved the scheduling code as suggested by u/17291 on reddit
 - Migrated data to config.json file as suggested by u/mikerahk on reddit
+
+### Update 2:
+-Reduced the syntax noises by imlpementing the mapping concept for the scheduling section as suggested by u/ElevenPhonons on reddit
