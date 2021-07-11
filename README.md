@@ -50,6 +50,10 @@ config = [[('07:30', 'bio_code'), ('09:00', 'bm_code'), ('12:30', 'phy_code')],
 [('07:30', 'bio_code'), ('09:00', 'am_code'), ('10:30', 'cn_code'), ('11:30', 'pm_code')] ,
 [('23:03', 'sej_code'), ('23:05', 'eng_code'), ('10:30', 'mm_code'), ('11:30', 'pm_code')]]
 ```
+- Go to line 95 and input the path of your chromedriver.exe
+```python
+driver = webdriver.Chrome(options=opt, executable_path=r'#your chromedriver.exe path')
+```
 - You may run the program itself on an IDE, or else you may run the program according to the following steps
 - Open up command prompt and direct it to the Python program's path
 - Type the following and press enter
