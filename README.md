@@ -1,6 +1,6 @@
 # Chrome GMautomation
 # Table of Contents
-1. [General Information](#general information)
+1. [General Information](#general-information)
 2. [Setup](#setup)
 3. [Usage](#usage)
 4. [References](#references)
