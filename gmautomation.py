@@ -99,21 +99,25 @@ gLogin()
 
 #loop that will keep the program running and execute the specific function according to the given time
 if __name__ == "__main__":
-    #scheduling
-    config = [[('07:30', 'bio_code'), ('09:00', 'bm_code'), ('12:30', 'phy_code')], 
-    [('08:00', 'pj_code'), ('10:30', 'am_code'), ('11:30', 'mm_code')], 
-    [('07:30', 'pm_code'), ('08:30', 'bm_code'), ('11:30', 'phy_code'), ('12:30', 'eng_code')], 
-    [('07:30', 'bio_code'), ('09:00', 'am_code'), ('10:30', 'cn_code'), ('11:30', 'pm_code')] ,
-    [('07:30', 'sej_code'), ('08:30', 'eng_code'), ('10:30', 'mm_code'), ('11:30', 'pm_code')]]
     
-    #mapping respective class time and code into the schedule argument by iterating through the config list
-    for schedules in config:
-        for class_time, class_code in schedules:
-            schedule.every().monday.at(class_time).do(login, data[class_code])
-            schedule.every().tuesday.at(class_time).do(login, data[class_code])
-            schedule.every().wednesday.at(class_time).do(login, data[class_code])
-            schedule.every().thursday.at(class_time).do(login, data[class_code])
-            schedule.every().sunday.at(class_time).do(login, data[class_code])
+    #scheduling
+    monday_class = [('07:30', 'bio_code'), ('09:00', 'bm_code'), ('12:30', 'phy_code')]
+    tuesday_class = [('08:00', 'pj_code'), ('10:30', 'am_code'), ('11:30', 'mm_code')] 
+    wednesday_class = [('07:30', 'pm_code'), ('08:30', 'bm_code'), ('11:30', 'phy_code'), ('12:30', 'eng_code')]
+    thursday_class = [('07:30', 'bio_code'), ('09:00', 'am_code'), ('10:30', 'cn_code'), ('11:30', 'pm_code')]
+    friday_class = [('07:30', 'sej_code'), ('08:30', 'eng_code'), ('10:30', 'mm_code'), ('11:30', 'pm_code')]
+
+    #mapping respective class time and code into the schedule argument by iterating through the schedule list
+    for class_time, class_code in monday_class:
+        schedule.every().monday.at(class_time).do(login, data[class_code])
+    for class_time, class_code in tuesday_class:
+        schedule.every().tuesday.at(class_time).do(login, data[class_code])
+    for class_time, class_code in wednesday_class:
+        schedule.every().wednesday.at(class_time).do(login, data[class_code])
+    for class_time, class_code in thursday_class:
+        schedule.every().thursday.at(class_time).do(login, data[class_code])
+    for class_time, class_code in friday_class:
+        schedule.every().friday.at(class_time).do(login, data[class_code])
 
     #run the program in the background
     while True:
