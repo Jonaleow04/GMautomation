@@ -1,4 +1,10 @@
 # Chrome GMautomation
+# Table of Contents
+1. [General Information](#general information)
+2. [Setup](#setup)
+3. [Usage](#usage)
+4. [References](#references)
+5. [Improvements](#improvements)
 
 ## General Information
 - This Python program will open up Chrome and log into your scheduled Google Meet with camera and mic turned off.
@@ -41,14 +47,14 @@ python -m pip install time
 }
 ```
 - Now open up gmautomation.py
-- From line 103 to 107 (config variable), you will need to replace the data with your own data
+- From line 104 to 108, you will need to replace the data with your own data
 ```python
 #scheduling
-config = [[('07:30', 'bio_code'), ('09:00', 'bm_code'), ('12:30', 'phy_code')], 
-[('08:00', 'pj_code'), ('10:30', 'am_code'), ('11:30', 'mm_code')], 
-[('07:30', 'pm_code'), ('08:30', 'bm_code'), ('11:30', 'phy_code'), ('12:30', 'eng_code')], 
-[('07:30', 'bio_code'), ('09:00', 'am_code'), ('10:30', 'cn_code'), ('11:30', 'pm_code')] ,
-[('23:03', 'sej_code'), ('23:05', 'eng_code'), ('10:30', 'mm_code'), ('11:30', 'pm_code')]]
+monday_class = [('07:30', 'bio_code'), ('09:00', 'bm_code'), ('12:30', 'phy_code')]
+tuesday_class = [('08:00', 'pj_code'), ('10:30', 'am_code'), ('11:30', 'mm_code')] 
+wednesday_class = [('07:30', 'pm_code'), ('08:30', 'bm_code'), ('11:30', 'phy_code'), ('12:30', 'eng_code')]
+thursday_class = [('07:30', 'bio_code'), ('09:00', 'am_code'), ('10:30', 'cn_code'), ('11:30', 'pm_code')]
+friday_class = [('07:30', 'sej_code'), ('08:30', 'eng_code'), ('10:30', 'mm_code'), ('11:30', 'pm_code')]
 ```
 - Go to line 95 and input the path of your chromedriver.exe
 ```python
