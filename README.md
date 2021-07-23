@@ -5,7 +5,7 @@
 - The web automation is made using the selenium module with ChromeDriver and the scheduling is made using the schedule module
 - An idea popped up in my head when entering my school's online class, that is 'What if I can automate all these entering the code process'. Thus, Chrome GMautomation was born.
 
-> WARNING: Note that this program must be used according to one's resonsibility. In no way do I or any contributors of this project encourage students to use this as a way to not sit in front of the desk during class. This project was made with the pure intention of improving personal programming skills.
+> WARNING: Note that this program must be used according to one's resonsibility. In no way do I or any contributors of this project encourage students to use this as a way to not sit in front of the desk during class. This project was made with the pure intention of showcasing skills.
 
 
 ## Setup
